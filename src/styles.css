@@ -1,3 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+@theme {
+    --font-google-sans: "google sans", "sans-serif";
+    --font-smooch: "smooch", "cursive";
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Starting state */
+.reveal-on-scroll {
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+/* Directional starting states */
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+}
+
+/* The trigger class added by JS */
+.is-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}

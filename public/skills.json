@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Strategic Collaboration",
+    "description": "Cross-functional partnership with Product & Engineering teams to align technical roadmaps with business goals.",
+    "icon": "users",
+    "delay": "0ms"
+  },
+  {
+    "title": "Crisis Management",
+    "description": "Expertise in Stakeholder and Escalations Management, ensuring high-pressure issues are resolved with precision.",
+    "icon": "shield",
+    "delay": "100ms"
+  },
+  {
+    "title": "Data Intelligence",
+    "description": "Driving outcomes through data-driven decision making and performance analytics to optimize operations.",
+    "icon": "bar-chart",
+    "delay": "200ms"
+  },
+  {
+    "title": "Automation & Tooling",
+    "description": "Streamlining efficiency through bespoke tool development and advanced workflow automation.",
+    "icon": "zap",
+    "delay": "300ms"
+  }
+]

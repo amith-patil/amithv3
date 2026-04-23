@@ -1,0 +1,32 @@
+.logo-path {
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: draw 3s ease-in-out forwards;
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 1500;
+        fill: transparent;
+    }
+
+    70% {
+        fill: transparent;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.bg {
+    display: flex;
+    /* Ensures the Tailwind classes on the tag work */
+
+    /* The Grid Pattern */
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}

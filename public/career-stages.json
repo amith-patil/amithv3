@@ -1,0 +1,86 @@
+    [
+        {
+            "title": "Senior Solutions Engineer",
+            "company": "Google",
+            "period": "2025 — Present",
+            "points": [
+                "Leading the technical strategy and execution for Google SecOps in the APAC region.",
+                "Developing tools using ADK,colab,python and other internal frameworks to increase efficiency.",
+                "Conducting Reviews to decrease preventability and reduce Contact Rate."
+            ],
+            "tools": [
+                "ADK",
+                "Colab",
+                "Python",
+                "BigQuery",
+                "Looker",
+                "Angular",
+                "Yara-L",
+                "Protobufs",
+                "Google Cloud Platform"
+            ]
+        },
+        {
+            "title": "Solutions Engineer III",
+            "company": "Google",
+            "period": "2023 — 2025",
+            "points": [
+                "Resolving Complex Techincal cases that involve working with multiple stakeholders.",
+                "Leading Escalation management for APAC/EMEA customers",
+                "Data Analysis to evaluate performance areas that can be streamlined to improve efficiency"
+            ],
+            "tools": [
+                "ADK",
+                "Colab",
+                "Python",
+                "Go",
+                "TypeScript",
+                "Google Cloud Platform",
+                "Angular"
+            ]
+        },
+        {
+            "title": "Solutions Engineer II",
+            "company": "Google",
+            "period": "2021 — 2023",
+            "points": [
+                "Working on Complex customer issue cases related to SecOps SIEM",
+                "Consulting with frontline support Engineers to assist them on multitude of issues.",
+                "Involved in creating tools to ease the troubleshooting process for the team."
+            ],
+            "tools": [
+                "python",
+                "bash"
+            ]
+        },
+        {
+            "title": "Technical Support Engineer II",
+            "company": "Dell EMC",
+            "period": "2018 — 2021",
+            "points": [
+                "Level 2 engineer for the EMEA region for the administration related skills with my secondary skill being Networking",
+                "Working on escalations from L1 TSE and opening Jira Tickets with In-Market Engineering",
+                "Lead a mentorship program to rapidly develop skills of new hires and global team mates."
+            ],
+            "tools": [
+                "ADK",
+                "Colab",
+                "Python"
+            ]
+        },
+        {
+            "title": "Technical Support Engineer I",
+            "company": "Dell EMC",
+            "period": "2016 — 2018",
+            "points": [
+                "Assisting customers with high severity cases like data unavailability and access issues",
+                "working with Field engineers remotely during on-site troubleshooting.",
+                "Cluster networking, setting up DNS records and Isilon SmartConnect configurations, Microsoft Active Directory Management."
+            ],
+            "tools": [
+                "ADK",
+                "Colab",
+                "Python"
+            ]
+        }
+    ]

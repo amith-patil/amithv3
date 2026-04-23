@@ -1,0 +1,30 @@
+import { CommonModule } from '@angular/common';
+import { Component, afterNextRender, ElementRef, Renderer2 } from '@angular/core';
+import { RevealDirective } from '../../directives/reveal';
+import { HttpClient } from '@angular/common/http';
+
+interface Skill {
+  title: string;
+  description: string;
+  icon: string; // We'll use this to handle the SVG path or a specific icon identifier
+  delay: string;
+}
+
+@Component({
+  selector: 'app-about',
+  imports: [CommonModule, RevealDirective],
+  templateUrl: './about.html',
+  styleUrl: './about.css',
+})
+export class About {
+
+  skills: Skill[] = []
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit() {
+    this.http.get<Skill[]>('./skills.json').subscribe(data => {
+      this.skills = data;
+    });
+  }
+}
