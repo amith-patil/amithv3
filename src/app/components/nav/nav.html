@@ -1,11 +1,13 @@
-<nav class="fixed z-50 py-4 md:py-8 flex items-center w-full md:w-auto left-0">
+<nav class="fixed py-4 md:py-8 flex items-center w-full md:w-auto left-0 transition-all duration-300"
+    [ngClass]="isMobileMenuOpen ? 'z-30 opacity-40 pointer-events-none' : 'z-50 opacity-100'">
+    <!-- Desktop Logo & Navigation Bar -->
     <div class="relative flex items-center transition-all duration-700 ease-in-out group"
         [ngClass]="offsetFlag ? 'px-6 md:px-8 translate-x-0' : 'px-4 -translate-x-2'"
         style="background: rgba(10, 10, 10, 0.25); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-left: none; clip-path: polygon(0 0, 90% 0, 100% 30%, 100% 100%, 0 100%);">
 
         <div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500"></div>
 
-        <a href="#home" class="shrink-0 py-3">
+        <a href="#home" (click)="scrollToTop($event)" class="shrink-0 py-3">
             <svg class="w-8 h-8 md:w-10 md:h-10 transition-all duration-500 group-hover:drop-shadow-[0_0_8px_rgba(249, 115, 22, 0.6)]"
                 [ngClass]="offsetFlag ? 'fill-orange-500' : 'fill-white'" viewBox="0 0 365 256"
                 xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +16,8 @@
             </svg>
         </a>
 
-        <div class="flex items-center overflow-hidden transition-all duration-700 ease-in-out"
+        <!-- Desktop Links (Hidden on Mobile) -->
+        <div class="hidden md:flex items-center overflow-hidden transition-all duration-700 ease-in-out"
             [ngClass]="offsetFlag ? 'max-w-xl opacity-100 ml-8 md:ml-12' : 'max-w-0 opacity-0 ml-0'">
 
             <div class="flex items-center space-x-4 md:space-x-12 pr-6">
@@ -40,3 +43,83 @@
         </div>
     </div>
 </nav>
+
+<!-- Mobile Hamburger Toggle Button -->
+<button (click)="toggleMobileMenu()" aria-label="Toggle navigation menu"
+    class="md:hidden fixed top-5 right-5 z-50 w-11 h-11 flex items-center justify-center transition-all duration-300 ease-in-out rounded-lg border border-white/10 cursor-pointer"
+    style="background: rgba(10, 10, 10, 0.45); backdrop-filter: blur(12px);">
+
+    <div class="relative w-6 h-4 flex flex-col justify-between">
+        <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"
+            [ngClass]="isMobileMenuOpen ? 'translate-y-[7px] rotate-45 bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.8)]' : 'translate-y-0 rotate-0'"></span>
+
+        <span class="w-full h-0.5 bg-white transition-all duration-300"
+            [ngClass]="isMobileMenuOpen ? 'opacity-0' : 'opacity-100'"></span>
+
+        <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"
+            [ngClass]="isMobileMenuOpen ? '-translate-y-[7px] -rotate-45 bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.8)]' : 'translate-y-0 rotate-0'"></span>
+    </div>
+</button>
+
+<!-- Mobile Menu Drawer Overlay -->
+<div class="md:hidden fixed inset-0 z-40 w-full h-screen flex justify-end"
+    [ngClass]="isMobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'">
+
+    <!-- Backdrop Blur Panel with smoothed hardware-accelerated opacity transition -->
+    <div class="absolute inset-0 bg-neutral-950/60 backdrop-blur-xl transition-opacity duration-700 ease-in-out"
+        (click)="closeMobileMenu()" [ngClass]="isMobileMenuOpen ? 'opacity-100' : 'opacity-0'"></div>
+
+    <!-- Slide-out Cyberpunk Drawer Content -->
+    <div class="relative w-[85%] max-w-sm h-full bg-neutral-950/95 border-l border-white/10 flex flex-col justify-between p-8 sm:p-10 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+        [ngClass]="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'"
+        style="clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%, 0 30px);">
+
+        <!-- Cyberpunk Diagonal Cut Graphic -->
+        <div class="absolute left-0 top-0 w-[30px] h-[30px] pointer-events-none">
+            <svg class="w-full h-full text-orange-500" viewBox="0 0 30 30" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="30" x2="30" y2="0" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+        </div>
+
+        <!-- Orange Accent vertical line (Starts under the diagonal cut) -->
+        <div class="absolute left-0 top-[30px] bottom-0 w-0.5 bg-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.5)]">
+        </div>
+
+        <!-- Navigation Links Container (Clean and Minimal) -->
+        <div class="flex flex-col gap-10 my-auto">
+            <a href="#home" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
+                <span
+                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">01.</span>
+                <span
+                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">home</span>
+            </a>
+
+            <a href="#about" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
+                <span
+                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">02.</span>
+                <span
+                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">about</span>
+            </a>
+
+            <a href="#career" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
+                <span
+                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">03.</span>
+                <span
+                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">career</span>
+            </a>
+
+            <a href="#contact" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
+                <span
+                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">04.</span>
+                <span
+                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">contact</span>
+            </a>
+        </div>
+
+        <!-- Clean, Minimal Cyberpunk Footer -->
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+            <span class="font-mono text-[9px] text-white/20 uppercase tracking-widest">© 2026 amith patil</span>
+        </div>
+    </div>
+</div>

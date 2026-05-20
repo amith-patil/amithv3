@@ -13,6 +13,20 @@ export class Nav {
   offsetFlag = true;
   isMobileMenuOpen = false;
 
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
+
+  scrollToTop(event: Event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.closeMobileMenu();
+  }
+
   @HostListener('window:scroll', ['$event']) getScrollHeight(event: any) {
     if (window.scrollY > 100) {
       this.offsetFlag = false;
