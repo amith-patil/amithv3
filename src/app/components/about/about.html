@@ -104,50 +104,52 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
                 <div *ngFor="let skill of skills" appReveal
-                    class="group relative p-8 border-white/5 border transition-all duration-500 hover:border-orange-500/50 reveal-on-scroll reveal-up"
-                    [style.transition-delay]="skill.delay"
-                    style="clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);">
+                    class="group relative transition-all duration-500 drop-shadow-[0_0_1px_rgba(255,255,255,0)] hover:drop-shadow-[0_0_6px_rgba(249,115,22,0)] reveal-on-scroll reveal-up"
+                    [style.transition-delay]="skill.delay">
+                    <div class="p-8 bg-neutral-900/40 w-full h-full transition-all duration-500"
+                        style="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 36% 100%, 30% 93%, 0% 93%);">
 
-                    <div class="text-orange-500 mb-4">
-                        <ng-container [ngSwitch]="skill.icon">
-                            <svg *ngSwitchCase="'users'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                            <svg *ngSwitchCase="'shield'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                <path d="m9 12 2 2 4-4" />
-                            </svg>
-                            <svg *ngSwitchCase="'bar-chart'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="20" x2="18" y2="10" />
-                                <line x1="12" y1="20" x2="12" y2="4" />
-                                <line x1="6" y1="20" x2="6" y2="14" />
-                            </svg>
-                            <svg *ngSwitchCase="'zap'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="m22 2-7 20-4-9-9-4Z" />
-                                <path d="M22 2 11 13" />
-                            </svg>
-                        </ng-container>
+                        <div class="text-orange-500 mb-4">
+                            <ng-container [ngSwitch]="skill.icon">
+                                <svg *ngSwitchCase="'users'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <svg *ngSwitchCase="'shield'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    <path d="m9 12 2 2 4-4" />
+                                </svg>
+                                <svg *ngSwitchCase="'bar-chart'" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10" />
+                                    <line x1="12" y1="20" x2="12" y2="4" />
+                                    <line x1="6" y1="20" x2="6" y2="14" />
+                                </svg>
+                                <svg *ngSwitchCase="'zap'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m22 2-7 20-4-9-9-4Z" />
+                                    <path d="M22 2 11 13" />
+                                </svg>
+                            </ng-container>
+                        </div>
+
+                        <h4
+                            class="font-google-sans font-bold text-sm uppercase tracking-wider mb-2 group-hover:text-orange-500 transition-colors duration-500">
+                            {{ skill.title }}
+                        </h4>
+
+                        <p class="text-white/40 text-sm leading-relaxed">
+                            {{ skill.description }}
+                        </p>
                     </div>
-
-                    <h4
-                        class="font-google-sans font-bold text-sm uppercase tracking-wider mb-2 group-hover:text-orange-500 transition-colors duration-500">
-                        {{ skill.title }}
-                    </h4>
-
-                    <p class="text-white/40 text-sm leading-relaxed">
-                        {{ skill.description }}
-                    </p>
                 </div>
 
             </div>
