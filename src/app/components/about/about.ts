@@ -18,13 +18,17 @@ interface Skill {
 })
 export class About {
 
-  skills: Skill[] = []
+  skills: Skill[] = [];
+  aboutParagraphs: string[] = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http.get<Skill[]>('./skills.json').subscribe(data => {
       this.skills = data;
+    });
+    this.http.get<string[]>('./about-paragraphs.json').subscribe(data => {
+      this.aboutParagraphs = data;
     });
   }
 }
