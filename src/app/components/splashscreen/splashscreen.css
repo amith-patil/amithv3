@@ -19,14 +19,3 @@
         fill: rgba(255, 255, 255, 0.1);
     }
 }
-
-:host {
-    display: flex;
-    /* Ensures the Tailwind classes on the tag work */
-
-    /* The Grid Pattern */
-    background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-}
