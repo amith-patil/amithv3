@@ -29,6 +29,12 @@ export class Career {
 
   constructor(private sanitizer: DomSanitizer, private http: HttpClient) { }
 
+  activeStageIndex: number | null = 0;
+
+  toggleStage(index: number) {
+    this.activeStageIndex = this.activeStageIndex === index ? null : index;
+  }
+
   careerStages: careerStages[] = [];
 
   items: MarqueeItem[] = [];
