@@ -10,7 +10,7 @@
     <div class="hidden min-[1200px]:block absolute right-[calc((100%-1400px)/2)] top-0 bottom-0 w-px bg-white/5 z-0">
     </div>
 
-    <div class="max-w-300 mx-auto grid grid-cols-1 md:grid-cols-[auto_1fr_1fr] gap-12 items-center relative z-10">
+    <div class="max-w-300 mx-auto grid grid-cols-1 md:grid-cols-[auto_1fr_1fr] gap-30 items-center relative z-10">
 
         <div appReveal
             class="hidden md:flex flex-col items-center justify-center self-stretch border-r border-white/10 pr-8 reveal-on-scroll reveal-left">
@@ -66,8 +66,8 @@
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
                     <span
-                        class="font-mono text-[10px] uppercase tracking-widest text-white/80 group-hover:text-white">10+
-                        Years Experience</span>
+                        class="font-mono text-[10px] uppercase tracking-widest text-white/80 group-hover:text-white cursor-default">10+
+                        Years of experience</span>
                 </div>
 
                 <div
@@ -79,7 +79,7 @@
                         <circle cx="12" cy="10" r="3" />
                     </svg>
                     <span
-                        class="font-mono text-[10px] uppercase tracking-widest text-white/80 group-hover:text-white">Bangalore,
+                        class="font-mono text-[10px] uppercase tracking-widest text-white/80 group-hover:text-white cursor-default">Bangalore,
                         India</span>
                 </div>
             </div>
@@ -112,7 +112,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
                 <div *ngFor="let skill of skills" appReveal
-                    class="group relative transition-all duration-500 drop-shadow-[0_0_1px_rgba(255,255,255,0)] hover:drop-shadow-[0_0_6px_rgba(249,115,22,0)] reveal-on-scroll reveal-up"
+                    class="group relative transition-all duration-500 drop-shadow-[0_0_1px_rgba(249,115,22,0)] hover:drop-shadow-[0_0_0px_rgba(249,115,22,0.6)] reveal-on-scroll reveal-up cursor-default"
                     [style.transition-delay]="skill.delay">
                     <div class="p-8 bg-neutral-900/40 w-full h-full transition-all duration-500"
                         style="clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 36% 100%, 30% 93%, 0% 93%);">
