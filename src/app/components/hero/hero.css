@@ -40,3 +40,11 @@
 .fill-btn:hover::before {
     transform: translateX(0);
 }
+
+/* Parallax layers — promote to GPU composite layer for smooth scroll */
+.parallax-bg,
+.parallax-mid,
+.parallax-fg {
+    will-change: transform;
+    backface-visibility: hidden;
+}

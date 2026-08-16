@@ -1,12 +1,12 @@
 <section
-    class="relative h-screen w-full flex flex-col justify-between bg-neutral-950 select-none overflow-hidden border-b border-2 border-white">
+    class="relative h-screen w-full flex flex-col justify-between bg-neutral-950 select-none overflow-hidden border-2 border-white">
     <!-- Grid & Radial Background -->
-    <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,rgba(255,255,255,0.15)_2px,transparent_2px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[60px_60px] pointer-events-none z-0">
+    <div [style.--parallax-y]="(scrollY * 0.3) + 'px'"
+        class="translate-y-(--parallax-y) absolute inset-0 bg-[radial-gradient(circle_at_0_0,rgba(255,255,255,0.15)_2px,transparent_2px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[60px_60px] pointer-events-none z-0">
     </div>
     <div class="relative z-20 w-full h-full max-w-3/4 mx-auto px-6">
-        <div
-            class="absolute top-30 md:top-50 md:right-12 left-0 md:left-auto px-8 md:px-0 text-center md:text-right max-w-lg">
+        <div [style.--parallax-y]="(scrollY * 0.5) + 'px'"
+            class="translate-y-(--parallax-y) absolute top-30 md:top-50 md:right-12 left-0 md:left-auto px-8 md:px-0 text-center md:text-right max-w-lg">
             <div appReveal class="space-y-4 reveal-on-scroll reveal-right delay-2800">
                 <p class="font-google-sans text-white text-lg md:text-3xl font-light leading-snug">
                     Supporting Enterprises with <br class="hidden md:block" />
@@ -24,8 +24,8 @@
                 </div>
             </div>
         </div>
-        <div
-            class="absolute  bottom-12 md:bottom-12 left-0 z-10 w-full flex items-end justify-center px-4 sm:px-6 md:px-12 pb-6 md:pb-12">
+        <div [style.--parallax-y]="(scrollY * 0.7) + 'px'"
+            class="translate-y-(--parallax-y) absolute bottom-12 md:bottom-12 left-0 z-10 w-full flex items-end justify-center px-4 sm:px-6 md:px-12 pb-6 md:pb-12">
             <div class="w-full mx-auto flex flex-col justify-between overflow-visible">
                 <div class="flex flex-wrap items-baseline gap-x-3 mb-2 gap-y-0 md:gap-y-5">
                     <h1 appReveal
