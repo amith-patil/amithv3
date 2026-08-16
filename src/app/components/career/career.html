@@ -19,9 +19,9 @@
         </div>
 
         <div class="relative mt-12 md:mt-0 w-full space-y-4">
-            <div *ngFor="let stage of careerStages; let index = index; let isEven = even" appReveal
+            <div *ngFor="let stage of careerStages; let index = index;" appReveal
                 class="group relative border border-white/10 bg-neutral-900/40 hover:border-orange-500/50 transition-all duration-300 overflow-hidden reveal-on-scroll"
-                [ngClass]="isEven ? 'reveal-right' : 'reveal-left'"
+                [ngClass]="'reveal-left'"
                 [style.clip-path]="'polygon(0 0, 98% 0, 100% 12px, 100% 100%, 2% 100%, 0 calc(100% - 12px))'">
 
                 <!-- Top-Left Corner Border Accent -->
@@ -84,7 +84,7 @@
 
                             <ul class="space-y-3 mt-6">
                                 <li *ngFor="let point of stage.points, index as i" class="flex items-center gap-3">
-                                    <span class="text-orange-500 text-md font-mono text-xs">0{{i+1}}.</span>
+                                    <span class="text-orange-500 text-md font-mono ">0{{i+1}}.</span>
                                     <p
                                         class="font-google-sans font-light text-white/70 text-sm md:text-base leading-relaxed">
                                         {{ point }}</p>
