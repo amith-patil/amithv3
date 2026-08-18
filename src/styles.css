@@ -157,26 +157,6 @@ body::-webkit-scrollbar {
     }
 }
 
-@supports (animation-range: entry exit) {
-    #career-progress-line {
-        height: 0%;
-        animation: grow-line linear forwards;
-        /* This links the animation to the view scroll of the timeline container */
-        animation-timeline: view();
-        animation-range: entry 20% exit 80%;
-    }
-
-    @keyframes grow-line {
-        from {
-            height: 0%;
-        }
-
-        to {
-            height: 100%;
-        }
-    }
-}
-
 /* This ensures the injected SVGs inherit the width/height/color from the parent span */
 span[innerHTML] ::ng-deep svg {
     width: 100%;

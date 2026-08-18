@@ -17,7 +17,7 @@ export class Socials {
   isScrolled = false;
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // Check if the vertical scroll is greater than 200px
-    this.isScrolled = window.scrollY > 100;
+    // Check if the vertical scroll is greater than 20px
+    this.isScrolled = window.scrollY > 20;
   }
 }
