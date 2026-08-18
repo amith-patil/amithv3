@@ -28,7 +28,7 @@ export class RevealDirective {
         observer.unobserve(this.el.nativeElement);
       }
     }, {
-      threshold: 0.30, // Trigger when 30% is visible
+      threshold: 0.50, // Trigger when 50% is visible
       rootMargin: '0px 0px -50px 0px' // Slightly offset so it feels more natural
     });
 
