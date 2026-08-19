@@ -5,16 +5,18 @@
             "period": "2025 — Present",
             "points": [
                 "Leading the technical strategy and execution for Google SecOps in the APAC region.",
-                "Developing tools using ADK,colab,python and other internal frameworks to increase efficiency.",
+                "Developing tools using ADK, colab, python and other internal frameworks to increase Supportability and Engineering efficiency.",
                 "Conducting Reviews to decrease preventability and reduce Contact Rate."
             ],
             "tools": [
-                "ADK",
-                "Colab",
                 "Python",
                 "BigQuery",
                 "Looker",
                 "Angular",
+                "TypeScript",
+                "Go",
+                "bash",
+                "devtools",
                 "Yara-L",
                 "Protobufs",
                 "Google Cloud Platform"
@@ -27,7 +29,7 @@
             "points": [
                 "Resolving Complex Techincal cases that involve working with multiple stakeholders.",
                 "Leading Escalation management for APAC/EMEA customers",
-                "Data Analysis to evaluate performance areas that can be streamlined to improve efficiency"
+                "Data Analysis to evaluate performance areas that can be streamlined to improve efficiency."
             ],
             "tools": [
                 "ADK",
@@ -44,13 +46,22 @@
             "company": "Google",
             "period": "2021 — 2023",
             "points": [
-                "Working on Complex customer issue cases related to SecOps SIEM",
+                "Working on Complex customer issue cases related to Google SecOps SIEM.",
                 "Consulting with frontline support Engineers to assist them on multitude of issues.",
                 "Involved in creating tools to ease the troubleshooting process for the team."
             ],
             "tools": [
                 "python",
-                "bash"
+                "bash",
+                "Looker",
+                "linux CLI",
+                "Go",
+                "TypeScript",
+                "Protobufs",
+                "Google Cloud Platform",
+                "Angular",
+                "Polymer",
+                "docker"
             ]
         },
         {
@@ -63,9 +74,15 @@
                 "Lead a mentorship program to rapidly develop skills of new hires and global team mates."
             ],
             "tools": [
-                "ADK",
-                "Colab",
-                "Python"
+                "Wireshark",
+                "Ktrace",
+                "iperf",
+                "Linux troubleshooting",
+                "Linux administration",
+                "OneFS",
+                "OneFS Smartpools",
+                "Microsoft Active Directory",
+                "docker"
             ]
         },
         {
@@ -78,9 +95,11 @@
                 "Cluster networking, setting up DNS records and Isilon SmartConnect configurations, Microsoft Active Directory Management."
             ],
             "tools": [
-                "ADK",
-                "Colab",
-                "Python"
+                "OneFS",
+                "Isilon Administration",
+                "InsightIQ",
+                "upgrades frameworks",
+                "enterprise level networking"
             ]
         }
     ]
