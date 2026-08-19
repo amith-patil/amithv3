@@ -15,21 +15,18 @@ export class RevealDirective {
   private initObserver() {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        // Add your visibility class
         this.renderer.addClass(this.el.nativeElement, 'is-visible');
         const video = this.el.nativeElement.querySelector('video');
         if (video) {
-          // muted is required for play() to work without user interaction
           video.muted = true;
           video.play().catch((err: any) => console.log("Video play blocked or failed:", err));
         }
 
-        // Stop watching once the animation is triggered
         observer.unobserve(this.el.nativeElement);
       }
     }, {
-      threshold: 0.50, // Trigger when 50% is visible
-      rootMargin: '0px 0px -50px 0px' // Slightly offset so it feels more natural
+      threshold: 0.50,
+      rootMargin: '0px 0px -50px 0px'
     });
 
     observer.observe(this.el.nativeElement);

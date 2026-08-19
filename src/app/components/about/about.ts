@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 interface Skill {
   title: string;
   description: string;
-  icon: string; // We'll use this to handle the SVG path or a specific icon identifier
+  icon: string;
   delay: string;
 }
 

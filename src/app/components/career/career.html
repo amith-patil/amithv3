@@ -24,16 +24,12 @@
                 [ngClass]="'reveal-left'"
                 [style.clip-path]="'polygon(0 0, 98% 0, 100% 12px, 100% 100%, 2% 100%, 0 calc(100% - 12px))'">
 
-                <!-- Top-Left Corner Border Accent -->
                 <div
                     class="absolute left-0 top-0 w-2 h-2 border-t-2 border-l-2 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity">
                 </div>
-                <!-- Bottom-Right Corner Border Accent -->
                 <div
                     class="absolute right-0 bottom-0 w-2 h-2 border-b-2 border-r-2 border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity">
                 </div>
-
-                <!-- Accordion Header -->
                 <div (click)="toggleStage(index)"
                     class="w-full flex items-center justify-between p-5 md:p-6 cursor-pointer text-left select-none relative z-10 transition-colors duration-300"
                     [class.bg-orange-500]="activeStageIndex === index">
@@ -59,7 +55,6 @@
                     </div>
 
                     <div class="flex items-center shrink-0 ml-4">
-                        <!-- Glow Arrow -->
                         <div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-orange-500/50"
                             [class.bg-orange-500]="activeStageIndex === index"
                             [class.border-orange-500]="activeStageIndex === index"
@@ -75,8 +70,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Accordion Content Container -->
                 <div class="grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     [style.grid-template-rows]="activeStageIndex === index ? '1fr' : '0fr'">
                     <div class="overflow-hidden">

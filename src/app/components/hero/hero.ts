@@ -50,7 +50,6 @@ export class Hero implements AfterViewInit, OnDestroy {
     this.ngZone.runOutsideAngular(() => {
       const cx = window.innerWidth / 2;
       const cy = window.innerHeight / 2;
-      // Max parallax offset ±28px
       this.targetX = ((event.clientX - cx) / cx) * 28;
       this.targetY = ((event.clientY - cy) / cy) * 28;
     });
@@ -61,8 +60,7 @@ export class Hero implements AfterViewInit, OnDestroy {
     if (this.rafPending) return;
     this.rafPending = true;
 
-    // Run outside Angular zone so change detection isn't triggered on every
-    // animation frame — we manually update only once per rAF tick.
+
     this.ngZone.runOutsideAngular(() => {
       requestAnimationFrame(() => {
         const target = window.scrollY * 0.5;

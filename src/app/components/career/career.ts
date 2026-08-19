@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 interface MarqueeItem {
   name: string;
   icon: string;
-  safeIcon?: SafeHtml; // The '?' means it starts as undefined and gets filled later
+  safeIcon?: SafeHtml;
 }
 
 interface careerStages {
@@ -40,7 +40,6 @@ export class Career {
   items: MarqueeItem[] = [];
 
   ngOnInit() {
-    // Process the items once the component initializes
     this.http.get<any[]>('./career-stages.json').subscribe(data => {
       this.careerStages = data;
     });
