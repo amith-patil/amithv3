@@ -5,7 +5,6 @@
 @theme {
     --font-google-sans: "google sans", "sans-serif";
     --font-google-mono: "Roboto Mono", monospace;
-    --font-smooch: "smooch", "cursive";
 }
 
 html {
@@ -21,16 +20,21 @@ html {
     html {
         scroll-behavior: auto !important;
     }
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+
     .reveal-on-scroll {
         opacity: 1 !important;
         transform: none !important;
         filter: none !important;
     }
+
     .marquee-container {
         animation: none !important;
     }

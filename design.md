@@ -15,7 +15,7 @@ The application adheres to a futuristic, cybernetic/sci-fi minimalist aesthetic 
 | **Framework** | Angular 21 (Standalone Components) | Strict type safety, modular architecture, native reactive Signals |
 | **Rendering Strategy** | Angular SSR + Client Hydration | Server-Side Rendering via Express, `withEventReplay()` for seamless hydration |
 | **Styling** | Tailwind CSS v4 + Vanilla CSS Variables | Modern token system with `@theme`, rapid utility styling, custom hardware-accelerated animations |
-| **Typography** | Google Sans, Roboto Mono, Smooch | Clean sans-serif hierarchy paired with industrial monospace elements |
+| **Typography** | Google Sans, Roboto Mono | Clean sans-serif hierarchy paired with industrial monospace elements |
 | **Iconography** | FontAwesome 6 (CDN) + Custom SVGs | Scalable vector graphics with custom stroke animations and dynamic DOM sanitization |
 | **Animation & Interactions** | CSS Keyframes + LERP rAF Engine + Lenis | High-performance outside-zone mouse tracking, multi-layer parallax, smooth inertial scroll, and scroll reveals |
 | **Data Architecture** | Decoupled JSON Datastores | Content stored in `public/*.json` assets fetched asynchronously via `HttpClient` |
