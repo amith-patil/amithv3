@@ -12,6 +12,30 @@ html {
     scroll-behavior: smooth;
 }
 
+:focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+    .marquee-container {
+        animation: none !important;
+    }
+}
+
 body::-webkit-scrollbar {
     display: none;
 }

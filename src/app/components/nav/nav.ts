@@ -42,4 +42,10 @@ export class Nav {
       this.offsetFlag = false;
     }
   }
+
+  @HostListener('window:keydown.escape') onEscapeKey() {
+    if (this.isMobileMenuOpen) {
+      this.closeMobileMenu();
+    }
+  }
 }

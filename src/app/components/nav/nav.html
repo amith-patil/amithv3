@@ -1,15 +1,16 @@
-<nav class="fixed py-4 md:py-8 flex items-center w-full md:w-auto left-0 transition-all duration-300"
+<nav aria-label="Main navigation" class="fixed py-4 md:py-8 flex items-center w-full md:w-auto left-0 transition-all duration-300"
     [ngClass]="isMobileMenuOpen ? 'z-30 opacity-40 pointer-events-none' : 'z-50 opacity-100'">
     <div class="relative flex items-center transition-all duration-700 ease-in-out group"
         [ngClass]="offsetFlag ? 'px-6 md:px-8 translate-x-0' : 'px-4 -translate-x-2'"
         style="background: rgba(10, 10, 10, 0.25); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-left: none; clip-path: polygon(0 0, 90% 0, 100% 30%, 100% 100%, 0 100%);">
 
-        <div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500" aria-hidden="true"></div>
 
-        <a href="#home" (click)="scrollToTop($event)" class="shrink-0 py-3">
+        <a href="#home" (click)="scrollToTop($event)" aria-label="Amith Patil — Scroll to Top"
+            class="shrink-0 py-3 rounded-sm focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-hidden">
             <svg class="w-8 h-8 md:w-10 md:h-10 transition-all duration-500 group-hover:drop-shadow-[0_0_8px_rgba(249, 115, 22, 0.6)]"
                 [ngClass]="offsetFlag ? 'fill-orange-500' : 'fill-white'" viewBox="0 0 365 256"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M178.693 55.4991C176.891 53.4068 177.012 50.1278 178.965 48.1752L224.927 2.21319C226.88 0.260619 229.924 0.373778 231.726 2.46606L362.904 154.76C364.706 156.852 364.584 160.131 362.631 162.083L316.669 208.045C316.202 208.513 315.672 208.862 315.111 209.094C314.197 210.088 312.886 210.711 311.43 210.711H132.993L101.127 250.287C99.3954 252.438 95.7531 254.211 92.9919 254.247L2.99958 255.425C0.238408 255.461 -0.596065 253.747 1.13575 251.596L120.294 103.605C122.026 101.454 125.668 99.6814 128.429 99.6453L215.734 98.5024L178.693 55.4991ZM157.953 179.711H285.682L219.665 103.067L157.953 179.711Z" />
             </svg>
@@ -19,34 +20,32 @@
             [ngClass]="offsetFlag ? 'max-w-xl opacity-100 ml-8 md:ml-12' : 'max-w-0 opacity-0 ml-0'">
 
             <div class="flex items-center space-x-4 md:space-x-12 pr-6">
-                <a href="#about" class="nav-link group/item">
-                    <span
-                        class="text-orange-500 font-mono text-[10px] mr-1 opacity-0 group-hover/item:opacity-100 transition-opacity">01.</span>
-                    <span
-                        class="font-google-sans text-white/70 hover:text-white uppercase text-xs tracking-[0.2em] transition-colors">about</span>
+                <a href="#about" class="nav-link group/item focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm focus-visible:outline-hidden py-1 px-1">
+                    <span class="text-orange-500 font-mono text-[10px] mr-1 opacity-0 group-hover/item:opacity-100 transition-opacity" aria-hidden="true">01.</span>
+                    <span class="font-google-sans text-white/70 hover:text-white uppercase text-xs tracking-[0.2em] transition-colors">about</span>
                 </a>
-                <a href="#career" class="nav-link group/item">
-                    <span
-                        class="text-orange-500 font-mono text-[10px] mr-1 opacity-0 group-hover/item:opacity-100 transition-opacity">02.</span>
-                    <span
-                        class="font-google-sans text-white/70 hover:text-white uppercase text-xs tracking-[0.2em] transition-colors">career</span>
+                <a href="#career" class="nav-link group/item focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm focus-visible:outline-hidden py-1 px-1">
+                    <span class="text-orange-500 font-mono text-[10px] mr-1 opacity-0 group-hover/item:opacity-100 transition-opacity" aria-hidden="true">02.</span>
+                    <span class="font-google-sans text-white/70 hover:text-white uppercase text-xs tracking-[0.2em] transition-colors">career</span>
                 </a>
-                <a href="#contact" class="nav-link group/item">
-                    <span
-                        class="text-orange-500 font-mono text-[10px] mr-1 opacity-0 group-hover/item:opacity-100 transition-opacity">03.</span>
-                    <span
-                        class="font-google-sans text-white/70 hover:text-white uppercase text-xs tracking-[0.2em] transition-colors">contact</span>
+                <a href="#contact" class="nav-link group/item focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm focus-visible:outline-hidden py-1 px-1">
+                    <span class="text-orange-500 font-mono text-[10px] mr-1 opacity-0 group-hover/item:opacity-100 transition-opacity" aria-hidden="true">03.</span>
+                    <span class="font-google-sans text-white/70 hover:text-white uppercase text-xs tracking-[0.2em] transition-colors">contact</span>
                 </a>
             </div>
         </div>
     </div>
 </nav>
 
-<button (click)="toggleMobileMenu()" aria-label="Toggle navigation menu"
-    class="md:hidden fixed top-5 right-5 z-50 w-11 h-11 flex items-center justify-center transition-all duration-300 ease-in-out border border-white/10 cursor-pointer"
+<button (click)="toggleMobileMenu()"
+    type="button"
+    [attr.aria-expanded]="isMobileMenuOpen"
+    aria-controls="mobile-navigation"
+    aria-label="Toggle navigation menu"
+    class="md:hidden fixed top-5 right-5 z-50 w-11 h-11 flex items-center justify-center transition-all duration-300 ease-in-out border border-white/10 cursor-pointer rounded-xs focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-hidden"
     style="background: rgba(10, 10, 10, 0.45); backdrop-filter: blur(12px);">
 
-    <div class="relative w-6 h-4 flex flex-col justify-between">
+    <div class="relative w-6 h-4 flex flex-col justify-between" aria-hidden="true">
         <span class="w-full h-0.5 bg-white transition-all duration-300 origin-center"
             [ngClass]="isMobileMenuOpen ? 'translate-y-1.75 rotate-45 bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.8)]' : 'translate-y-0 rotate-0'"></span>
 
@@ -58,47 +57,43 @@
     </div>
 </button>
 
-<div class="md:hidden fixed inset-0 z-40 w-full h-screen flex justify-end"
+<div id="mobile-navigation"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile Navigation Menu"
+    class="md:hidden fixed inset-0 z-40 w-full h-screen flex justify-end"
     [ngClass]="isMobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'">
 
     <div class="absolute inset-0 bg-neutral-950/60 backdrop-blur-xl transition-opacity duration-700 ease-in-out"
-        (click)="closeMobileMenu()" [ngClass]="isMobileMenuOpen ? 'opacity-100' : 'opacity-0'"></div>
+        (click)="closeMobileMenu()" [ngClass]="isMobileMenuOpen ? 'opacity-100' : 'opacity-0'" aria-hidden="true"></div>
 
     <div class="relative w-[85%] max-w-sm h-full bg-neutral-950/95 border-l border-white/10 flex flex-col justify-between p-8 sm:p-10 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
         [ngClass]="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'">
 
-        <div class="flex flex-col gap-10 my-auto">
-            <a href="#home" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
-                <span
-                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">01.</span>
-                <span
-                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">home</span>
+        <nav aria-label="Mobile links" class="flex flex-col gap-10 my-auto">
+            <a href="#home" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm focus-visible:outline-hidden">
+                <span class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1" aria-hidden="true">01.</span>
+                <span class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">home</span>
             </a>
 
-            <a href="#about" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
-                <span
-                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">02.</span>
-                <span
-                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">about</span>
+            <a href="#about" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm focus-visible:outline-hidden">
+                <span class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1" aria-hidden="true">02.</span>
+                <span class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">about</span>
             </a>
 
-            <a href="#career" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
-                <span
-                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">03.</span>
-                <span
-                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">career</span>
+            <a href="#career" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm focus-visible:outline-hidden">
+                <span class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1" aria-hidden="true">03.</span>
+                <span class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">career</span>
             </a>
 
-            <a href="#contact" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline">
-                <span
-                    class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1">04.</span>
-                <span
-                    class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">contact</span>
+            <a href="#contact" (click)="closeMobileMenu()" class="group relative py-2 flex items-baseline focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm focus-visible:outline-hidden">
+                <span class="text-orange-500 font-mono text-sm mr-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:translate-x-1" aria-hidden="true">04.</span>
+                <span class="font-google-sans text-white/80 hover:text-white uppercase text-3xl tracking-[0.25em] transition-all duration-300 group-hover:text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">contact</span>
             </a>
-        </div>
+        </nav>
 
         <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-            <span class="font-mono text-[9px] text-white/20 uppercase tracking-widest">© 2026 amith patil</span>
+            <span class="font-mono text-[9px] text-white/40 uppercase tracking-widest">© 2026 amith patil</span>
         </div>
     </div>
 </div>

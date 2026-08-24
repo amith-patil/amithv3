@@ -1,9 +1,18 @@
+<!-- Accessible loading status for screen readers -->
+<div role="status" aria-live="polite" class="sr-only">
+    {{ shouldShowSplash() ? 'Loading, please wait...' : 'Page ready.' }}
+</div>
+
 <app-splashscreen *ngIf="shouldShowSplash()"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Loading Amith Patil Portfolio"
     class="fixed inset-0 z-9999 h-screen w-screen flex items-center justify-center bg-neutral-950 transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)]"
     [class.-translate-y-full]="isFading()" [class.translate-y-0]="!isFading()">
 </app-splashscreen>
 <app-nav *ngIf="showGlobalUI()" class="fixed top-0 left-0 w-full z-50"></app-nav>
-<div class="transition-all duration-1000 origin-top" [class.scale-98]="!isFading()" [class.scale-100]="isFading()">
+<div class="transition-all duration-1000 origin-top" [class.scale-98]="!isFading()" [class.scale-100]="isFading()"
+    [attr.aria-hidden]="shouldShowSplash() ? 'true' : null">
     <router-outlet></router-outlet>
 </div>
 <app-socials *ngIf="showGlobalUI()" class="fixed bottom-0 left-0 z-50"></app-socials>

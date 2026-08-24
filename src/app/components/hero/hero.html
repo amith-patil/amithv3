@@ -1,6 +1,6 @@
 <div class="relative h-screen w-full bg-white p-0.5"
     style="clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 35px 100%, 0 calc(100% - 35px));">
-    <section class="relative h-full w-full flex flex-col justify-between bg-neutral-950 select-none overflow-hidden"
+    <section aria-label="Introduction and Overview" class="relative h-full w-full flex flex-col justify-between bg-neutral-950 select-none overflow-hidden"
         style="clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 35px 100%, 0 calc(100% - 35px));">
         <div [style.--parallax-y]="(scrollY * 0.3) + 'px'"
             class="translate-y-(--parallax-y) absolute inset-0 bg-[radial-gradient(circle_at_0_0,rgba(255,255,255,0.15)_2px,transparent_2px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[60px_60px] pointer-events-none z-0">
@@ -8,7 +8,7 @@
 
         <div class="hero-logo-bg pointer-events-none absolute bottom-0 right-0 z-1 opacity-20 max-sm:scale-50 sm:max-lg:scale-75 origin-bottom-right"
             [style.translate]="'-5% 12%'" [style.transform]="'translate(' + logoX + 'px, ' + logoY + 'px)'">
-            <svg class="hero-bg-logo" viewBox="-15 -15 400 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="hero-bg-logo" viewBox="-15 -15 400 285" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <line x1="173.3" y1="53.8" x2="230.6" y2="-3.4" stroke="white" stroke-width="1" />
                 <line x1="226.5" y1="-3.6" x2="368.1" y2="160.8" stroke="white" stroke-width="1" />
                 <line x1="368.3" y1="156.4" x2="311.0" y2="213.7" stroke="white" stroke-width="1" />
