@@ -3,8 +3,7 @@
     [class.-translate-y-full]="isFading()" [class.translate-y-0]="!isFading()">
 </app-splashscreen>
 <app-nav *ngIf="showGlobalUI()" class="fixed top-0 left-0 w-full z-50"></app-nav>
-<div class="transition-all duration-1000" [class.scale-95]="!isFading()" [class.scale-100]="isFading()"
-    [class.translate-y-10]="!isFading()">
+<div class="transition-all duration-1000 origin-top" [class.scale-98]="!isFading()" [class.scale-100]="isFading()">
     <router-outlet></router-outlet>
 </div>
 <app-socials *ngIf="showGlobalUI()" class="fixed bottom-0 left-0 z-50"></app-socials>

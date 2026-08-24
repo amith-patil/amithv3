@@ -63,7 +63,7 @@ export class Hero implements AfterViewInit, OnDestroy {
 
     this.ngZone.runOutsideAngular(() => {
       requestAnimationFrame(() => {
-        const target = window.scrollY * 0.5;
+        const target = window.scrollY * 1;
         this.ngZone.run(() => {
           this.scrollY = target;
         });
