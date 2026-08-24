@@ -156,11 +156,7 @@ graph TD
 - Automatically initiates playback for child `<video>` elements when scrolled into view.
 - Disconnects after initial intersection to ensure zero idle runtime overhead.
 
-### 5.2. Smooth Inertial Scrolling (Lenis)
-- Integrated via `@studio-freight/lenis` inside `App`'s `ngAfterViewInit` running outside Angular's change detection zone (`NgZone.runOutsideAngular()`).
-- Normalizes scroll physics across trackpads and mousewheels with an exponential deceleration curve (`1.001 - 2^(-10t)`), eliminating scroll jank and elevating the feel of parallax and reveal animations.
-
-### 5.3. Animation Architecture
+### 5.2. Animation Architecture
 
 | Animation | Implementation | Performance Strategy |
 | :--- | :--- | :--- |
